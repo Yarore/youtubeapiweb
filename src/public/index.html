@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YouTube Explorer</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="header-content">
+        <h1 class="app-title">YouTube Explorer</h1>
+        <p class="tagline">YouTube Data API를 사용하여 관심 있는 영상을 검색해 보세요.</p>
+        <form id="search-form" class="search-form" autocomplete="off">
+          <label class="sr-only" for="search-input">검색어</label>
+          <input
+            id="search-input"
+            name="q"
+            class="search-input"
+            type="search"
+            placeholder="예: javascript 강좌, 여행 브이로그, 뉴스 하이라이트"
+            required
+            minlength="2"
+          />
+          <button type="submit" class="search-button">검색</button>
+        </form>
+        <p id="status" class="status-message" role="status" aria-live="polite">검색어를 입력하고 Enter 키를 누르세요.</p>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="results-section" aria-labelledby="results-heading">
+        <div class="results-header">
+          <h2 id="results-heading" class="section-title">검색 결과</h2>
+          <div class="controls">
+            <button id="prev-button" type="button" class="pagination-button" disabled>이전</button>
+            <button id="next-button" type="button" class="pagination-button" disabled>다음</button>
+          </div>
+        </div>
+        <div id="results" class="results-grid" aria-live="polite" aria-busy="false"></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>
+        이 데모는
+        <a href="https://developers.google.com/youtube/v3" target="_blank" rel="noopener">YouTube Data API v3</a>
+        를 사용합니다. 결과 및 메타데이터는 YouTube에서 제공됩니다.
+      </p>
+    </footer>
+
+    <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="overlay-content">
+        <button id="close-overlay" class="overlay-close" type="button" aria-label="동영상 닫기">×</button>
+        <div class="player-wrapper">
+          <iframe
+            id="video-player"
+            title="YouTube 동영상 플레이어"
+            src=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div id="video-details" class="video-details"></div>
+      </div>
+    </div>
+
+    <template id="result-template">
+      <article class="video-card">
+        <button type="button" class="thumbnail-button" aria-label="동영상 재생">
+          <img class="thumbnail" src="" alt="" loading="lazy" />
+          <span class="thumbnail-overlay" aria-hidden="true">▶</span>
+        </button>
+        <div class="video-info">
+          <h3 class="video-title">
+            <a href="#" class="title-link" role="button"></a>
+          </h3>
+          <p class="channel"></p>
+          <p class="meta"></p>
+          <p class="description"></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
