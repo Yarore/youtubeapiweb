@@ -1,0 +1,22 @@
+{
+  "name": "youtubeapiweb",
+  "version": "1.0.0",
+  "description": "A lightweight web application for exploring YouTube videos via the YouTube Data API.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node -e \"console.log('No automated tests configured');\""
+  },
+  "keywords": [
+    "youtube",
+    "api",
+    "search",
+    "videos"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  }
+}
