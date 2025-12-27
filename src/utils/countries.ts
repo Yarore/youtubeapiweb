@@ -1,0 +1,30 @@
+export const countries = [
+  { code: '', name: '전체' },
+  { code: 'KR', name: '대한민국' },
+  { code: 'US', name: '미국' },
+  { code: 'JP', name: '일본' },
+  { code: 'GB', name: '영국' },
+  { code: 'DE', name: '독일' },
+  { code: 'FR', name: '프랑스' },
+  { code: 'CA', name: '캐나다' },
+  { code: 'AU', name: '호주' },
+  { code: 'BR', name: '브라질' },
+  { code: 'IN', name: '인도' },
+  { code: 'MX', name: '멕시코' },
+  { code: 'ES', name: '스페인' },
+  { code: 'IT', name: '이탈리아' },
+  { code: 'RU', name: '러시아' },
+  { code: 'CN', name: '중국' },
+  { code: 'TW', name: '대만' },
+  { code: 'TH', name: '태국' },
+  { code: 'VN', name: '베트남' },
+  { code: 'ID', name: '인도네시아' },
+  { code: 'PH', name: '필리핀' },
+];
+
+export const sortOptions = [
+  { value: 'relevance', label: '관련성' },
+  { value: 'date', label: '최신순' },
+  { value: 'viewCount', label: '조회수순' },
+  { value: 'subscriberCount', label: '구독자순' },
+];
